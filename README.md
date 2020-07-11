@@ -1,30 +1,37 @@
-# react-usebusy
+Do you have tens of imageUploading, buttonClicking, imageLoading state in your component?
 
-> Keep track of your busy list! No more countless isLoading, isButtonLoading, isUploading states to manage!
+useBusy keep tracks of events in a intuitive way.
+# Reference
 
-[![NPM](https://img.shields.io/npm/v/react-usebusy.svg)](https://www.npmjs.com/package/react-usebusy) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
-
-```bash
-npm install --save react-usebusy
+``` 
+const { busy, isBusy, notBusy, busyList } = useBusy({ warning: true});
 ```
 
-## Usage
+### How to use?
 
-```jsx
-import React, { Component } from 'react'
+```
+onClick={() => isBusy('Waiting for image to load')}
 
-import MyComponent from 'react-usebusy'
-import 'react-usebusy/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+busy('Waiting for image to load') //returns true
 ```
 
-## License
+```
+onClick={() => notBusy('Waiting for image to load')}
 
-MIT © [daveteu](https://github.com/daveteu)
+busy('Waiting for image to load') //returns false
+```
+
+```
+onClick={() => isBusy('For for 5 Seconds', 5000)}
+
+busy('Busy for 5 Seconds') // returns true, returns false in 5 seconds
+
+```
+
+```
+console.log(busyList) //returns array of items you are busy with.
+```
+
+Note: Only strings accepted. Use {warning: true} if you want to see warning in development. (default is false)
+
+

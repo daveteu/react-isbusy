@@ -1,6 +1,6 @@
 {
   "name": "react-usebusy",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Keep track of your busy list! No more countless isLoading, isButtonLoading, isUploading states to manage!",
   "author": "daveteu",
   "license": "MIT",
